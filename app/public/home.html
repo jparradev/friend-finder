@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <title>Friend Finder Home Page</title>
+  <style type="text/css">
+    #main-container {
+      margin: 0 auto;
+      width: 700px;
+    }
+
+    #hello-world {
+      border-radius: 25px;
+      font-family: 'Press Start 2P', cursive;
+      background: lightblue;
+      text-align: center;
+      padding: 20px 0 20px 0;
+      position: relative;
+      top: 50px;
+      border: double 15px white;
+    }
+
+    #world-hello {
+      border-radius: 25px;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      padding: 20px 0 20px 0;
+      position: relative;
+      top: 50px;
+      border: double 15px lightblue;
+    }
+
+    #link {
+      position: relative;
+      top: 50px;
+      left: 35px;
+      font-family: 'Press Start 2P', cursive;
+      color: saddlebrown;
+      font-size: 10px;
+      text-decoration: none;
+    }
+
+    .blink {
+      animation: blinker 2s linear infinite;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .buttons {
+      display: inline-block;
+      padding: 20px;
+      border-radius: 12px;
+      box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 300;
+      color: white;
+      background-color: steelblue;
+      text-align: center;
+    }
+
+    .buttons:hover {
+      background-color: #4095c6;
+    }
+  </style>
+</head>
+
+<body background="https://steamuserimages-a.akamaihd.net/ugc/100603690261142222/7C0161535556DCCE3A2A81E9A94539FF5D41FBBC/">
+  <div id="main-container">
+    <div id="hello-world">
+      <h1>Welcome to the Friend Finder</h1>
+      <h4 class="blink">Click On the Survey Button Below to Get Started</h4>
+      <a href="./survey.html"><button class="buttons">Start Survey</button></a>
+    </div>
+    <div>
+      <a href="/api/friends">
+        <p id="link">Badguys API LINK</p>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

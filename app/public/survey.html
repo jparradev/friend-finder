@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <title>Friend Finder - Take the Survey</title>
+
+    <!-- ***INCLUDED MY CSS HERE BECAUSE I COULD NOT FIGURE OUT HOW TO SERVE MY CSS FILE WITH EXPRESS*** -->
+    <style type="text/css">
+        #main-container {
+            margin: 0 auto;
+            width: 700px;
+        }
+
+        #user-name {
+            width: 400px;
+            margin-left: 48px;
+        }
+
+        #photo-url {
+            width: 400px;
+        }
+
+        #world-hello {
+            border-radius: 25px;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            padding: 20px 0 20px 0;
+            position: relative;
+            top: 50px;
+            border: double 15px white;
+            background-color: lightblue;
+        }
+
+        #questions {
+            background-color: lightgrey;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+            width: 95%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        #link {
+            position: relative;
+            top: 50px;
+            left: 35px;
+            font-family: 'Press Start 2P', cursive;
+            color: saddlebrown;
+            font-size: 10px;
+            text-decoration: none;
+        }
+
+        .buttons {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
+            font-weight: 300;
+            color: white;
+            background-color: steelblue;
+            text-align: center;
+        }
+
+        .buttons:hover {
+            background-color: #4095c6;
+        }
+    </style>
+
+</head>
+
+<body background="https://steamuserimages-a.akamaihd.net/ugc/100603690261142222/7C0161535556DCCE3A2A81E9A94539FF5D41FBBC/">
+    <div id="main-container">
+        <div id="world-hello">
+            <h3>Complete the Survey Below and Find a Friend</h3>
+            <hr>
+            <div id="questions">
+                <form id="form">
+                    Your Name: <input type="text" id="user-name"><br>
+                    Your Photo URL: <input type="text" id="photo-url"><br><br>
+                    <p>1) Albania just isn't worth revisiting.</p>
+                    <select id="q1">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>2) Neapolitan ice cream is the only ice cream that matters.</p>
+                    <select id="q2">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>3) Where the !$#* is the remote?</p>
+                    <select id="q3">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>4) My ideal weekend involves a jar of peanut butter, Hawaiian shirts, and a VHS copy of 'WCW The
+                        Great American Bash (1986)'.</p>
+                    <select id="q4">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>5) I was really sad to see 'Nashville Hot Fish Sandwiches' from Arby’s not become a regular
+                        member of the menu.</p>
+                    <select id="q5">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>6) If I won the lottery, the first thing I would do is move the family to northern Florida.</p>
+                    <select id="q6">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>7) Burritos, pizza, cheeseburgers. In that order.</p>
+                    <select id="q7">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>8) I'm totally addicted to nicotine gum.</p>
+                    <select id="q8">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>9) That Top Gun soundtrack really gets me fired up.</p>
+                    <select id="q9">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <p>10) No new friends, no new friends, no new friends, no, no new...</p>
+                    <select id="q10">
+                        <option value="" selected="selected">(select an option)</option>
+                        <option value="1">1 (strongly disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (strongly agree)</option>
+                    </select>
+                    <br><br>
+                    <input type="submit" class="buttons" id="send">
+                </form>
+            </div>
+    <!-- ***COULD NOT FIGURE OUT HOW TO GET THE MODAL TO WORK, THIS IS MY WORK AROUND*** -->
+            <div id="results">
+                <p>Your Friend Finder Results!!!</p>
+                <div id="friend-name"></div>
+                <div id="friend-photo"></div>
+                <p>Click the Photo to Try Again!</p>
+            </div>
+
+        </div>
+        <div>
+            <a href="../api/friends">
+                <p id="link">FRIENDS API LINK</p>
+            </a>
+        </div>
+    </div>
+</body>
+<!-- ***NO SEPERATE JS FILE TO RUN THE APP, ALL INCLUDED BELOW*** -->
+<script>
+    var newScores = [];
+    var newFriend = {};
+    var superFriend = [];
+    $("#results").hide();
+
+
+    function getInfo() {
+        var x = "";
+
+        for (let i = 1; i < 11; i++) {
+            x = $('#q' + i).val();
+            newScores.push(x);
+        }
+
+        newFriend = {
+            name: $("#user-name").val().trim(),
+            photoURL: $("#photo-url").val().trim(),
+            scores: newScores
+        };
+    }
+
+    function postFriend() {
+        $.post("/api/friends", newFriend,
+            function (data) {
+
+                if (data) {
+                    alert("You have been added to the friend list!");
+                }
+            });
+    }
+
+    function compareFriend() {
+
+        var tempArray = [];
+
+        $.ajax({
+                url: "/api/friends",
+                method: "GET"
+            })
+            .then(function (friendData) {
+                var compatRating = 0;
+                for (let z = 0; z < friendData.length; z++) {
+                    compatRating = 0;
+                    for (let i = 0; i < newScores.length; i++) {
+                        if (newScores[i] > friendData[z].scores[i]) {
+                            compatRating = compatRating + (newScores[i] - friendData[z].scores[i]);
+                        } else {
+                            compatRating = compatRating + (friendData[z].scores[i] - newScores[i]);
+                        }
+                    }
+                    tempArray.push({
+                        name: friendData[z].name,
+                        photoURL: friendData[z].photoURL,
+                        score: compatRating
+                    });
+                }
+                tempArray.sort(function (a, b) {
+                    return a.score - b.score
+                })
+                superFriend = tempArray[0];
+                $('#friend-name').html("<p>Name: " + superFriend.name + "</p>");
+                $('#friend-photo').html("<img src='" + superFriend.photoURL + "'style='width:500px;'>");
+            });
+
+
+    }
+
+    $("#send").on("click", function (event) {
+        event.preventDefault();
+        getInfo();
+        compareFriend();
+        $("#questions").hide();
+        $("#results").show();
+    })
+
+    $('#friend-photo').on("click", function () {
+        postFriend();
+        $("#questions").show();
+        $("#results").hide();
+        $('#form')[0].reset();
+    })
+</script>
+
+</html>
